@@ -2,7 +2,7 @@ var canv = document.getElementById('canvas')
 var ctx = canv.getContext('2d')
 
 canv.width = 386
-canv.height = 890
+canv.height = 768
 
 var car = new Image()
 var car_1 = new Image()
@@ -19,7 +19,7 @@ road.src = "img/road.png"
 line.src = "img/line.png"
 
 var xPos = 210
-var yPos = 750
+var yPos = 630
 var car_width = 61
 var car_height = 124
 var score = 0
@@ -143,22 +143,22 @@ function draw () {
     // check cars
     // car 1
     xPos == cars[i].xCar1 && yPos == cars[i].yCar1 + car_height ? location.reload() : '';
-    ((cars[i].yCar1 + car_height) >= yPos && (cars[i].yCar1 + car_height) <= yPos + car_height) && 
+    ((cars[i].yCar1 + car_height) >= yPos && (cars[i].yCar1 + car_height) <= yPos + (car_height * 2)) && 
     (xPos == 10 && yPos + car_height) ? location.reload() : '';
     
     // car 2
     xPos == cars[i].xCar2 && yPos == cars[i].yCar2 + car_height ? location.reload() : '';
-    ((cars[i].yCar2 + car_height) >= yPos && (cars[i].yCar2 + car_height) <= yPos + car_height) && 
+    ((cars[i].yCar2 + car_height) >= yPos && (cars[i].yCar2 + car_height) <= yPos + (car_height * 2)) && 
     (xPos == 110 && yPos + car_height) ? location.reload() : '';
     
     // car 3
     xPos == cars[i].xCar3 && yPos == cars[i].yCar3 + car_height ? location.reload() : '';
-    ((cars[i].yCar3 + car_height) >= yPos && (cars[i].yCar3 + car_height) <= yPos + car_height) && 
+    ((cars[i].yCar3 + car_height) >= yPos && (cars[i].yCar3 + car_height) <= yPos + (car_height * 2)) && 
     (xPos == 210 && yPos + car_height) ? location.reload() : '';
     
     // car 4
     xPos == cars[i].xCar4 && yPos == cars[i].yCar4 + car_height ? location.reload() : '';
-    ((cars[i].yCar4 + car_height) >= yPos && (cars[i].yCar4 + car_height) <= yPos + car_height) && 
+    ((cars[i].yCar4 + car_height) >= yPos && (cars[i].yCar4 + car_height) <= yPos + (car_height * 2)) && 
     (xPos == 310 && yPos + car_height) ? location.reload() : '';
 
     // score
@@ -172,12 +172,6 @@ function draw () {
       if(event.keyCode==39){
         xPos != 310 ? xPos += 100 : xPos += 0
       }
-      if (event.keyCode==38){
-        yPos != 0 ? yPos -= 100 : xPos -= 0;
-      }
-      if(event.keyCode==40){
-        yPos != 890 ? yPos += 100 : xPos += 0
-      }
     }
   }
 
@@ -187,13 +181,13 @@ function draw () {
   // score
   ctx.fillStyle = "#FF0000"
   ctx.font = "24px verdana"
-  ctx.fillText("Счет:" + score, 20, 870)
+  ctx.fillText("Счет:" + score, 20, 758)
 
   function win () {
     console.log('Вы победили!')
     ctx.fillStyle = "#FF0000"
     ctx.font = "24px verdana"
-    ctx.fillText("Вы победили. Счет: " + score, 60, 470)
+    ctx.fillText("Вы победили. Счет: " + score, 60, 384)
   }
 
   score != 100 ? requestAnimationFrame(draw) : requestAnimationFrame(win)
