@@ -2,7 +2,7 @@ var canv = document.getElementById('canvas')
 var ctx = canv.getContext('2d')
 
 canv.width = 386
-canv.height = 768
+canv.height = 896
 
 var car = new Image()
 var car_1 = new Image()
@@ -19,7 +19,7 @@ road.src = "img/road.png"
 line.src = "img/line.png"
 
 var xPos = 210
-var yPos = 630
+var yPos = 500
 var car_width = 61
 var car_height = 124
 var score = 0
@@ -181,7 +181,7 @@ function draw () {
   // score
   ctx.fillStyle = "#FF0000"
   ctx.font = "24px verdana"
-  ctx.fillText("Счет:" + score, 20, 758)
+  ctx.fillText("Счет:" + score, 20, 620)
 
   function win () {
     console.log('Вы победили!')
