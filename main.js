@@ -42,10 +42,10 @@ cars[0] = {
 
 // cars
   xCar1: 10,
-  yCar1: Math.floor(getRandom(-2, -10)) * 100,
+  yCar1: Math.floor(getRandom(-1, -5)) * 100,
 
   xCar2: 110,
-  yCar2: Math.floor(getRandom(-2, -10)) * 100,
+  yCar2: Math.floor(getRandom(-5, -10)) * 100,
 
   xCar3: 210,
   yCar3: Math.floor(getRandom(-2, -10)) * 100,
@@ -97,7 +97,7 @@ function draw () {
 
     // push cars
     // car 1
-    if (cars[i].yCar1 == 500) {
+    if (cars[i].yCar1 == 700) {
       cars.push({
         xCar1: 10,
         yCar1: Math.floor(getRandom(-2, -10)) * 100
@@ -108,7 +108,7 @@ function draw () {
     }
     
     // car 2
-    if (cars[i].yCar2 == 500) {
+    if (cars[i].yCar2 == 200) {
       cars.push({
         xCar2: 110,
         yCar2: Math.floor(getRandom(-2, -10)) * 100
@@ -119,7 +119,7 @@ function draw () {
     }
     
     // car 3
-    if (cars[i].yCar3 == 500) {
+    if (cars[i].yCar3 == 300) {
       cars.push({
         xCar3: 210,
         yCar3: Math.floor(getRandom(-2, -10)) * 100
@@ -130,7 +130,7 @@ function draw () {
     }
     
     // car 4
-    if (cars[i].yCar4 == 500) {
+    if (cars[i].yCar4 == 700) {
       cars.push({
         xCar4: 310,
         yCar4: Math.floor(getRandom(-2, -10)) * 100
@@ -190,7 +190,7 @@ function draw () {
     ctx.fillText("Вы победили. Счет: " + score, 60, 384)
   }
 
-  score != 100 ? requestAnimationFrame(draw) : requestAnimationFrame(win)
+  score != 80 ? requestAnimationFrame(draw) : requestAnimationFrame(win)
 }
 //// main function end
 
