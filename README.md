@@ -1,2 +1,2 @@
-# TheBestRepository
-Car Racing in JavaScript
+# Car Racing in JavaScript
+
